@@ -5,6 +5,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 
 import { UsersModule } from './users/users.module';
 import { ProductsModule } from "./products/products.module";
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   controllers: [AppController],
@@ -12,7 +13,8 @@ import { ProductsModule } from "./products/products.module";
   imports: [
     UsersModule,
     ProductsModule,
-    MongooseModule.forRoot('mongodb://localhost:27017/corp-rest')
+    MongooseModule.forRoot('mongodb://localhost:27017/corp-rest'),
+    AuthModule
   ],
 })
 export class AppModule {}
